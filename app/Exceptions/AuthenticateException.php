@@ -6,5 +6,17 @@ use Exception;
 
 class AuthenticateException extends Exception
 {
-    //
+    
+    public function report(){
+
+        return false;
+
+    }
+
+    public function render($request){
+        return response()->json([
+            'message' => 'Error AuthenticateException'
+        ],401);
+    }
+
 }
